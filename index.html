@@ -13,11 +13,22 @@
     <script type="text/javascript" src="lib/bullet.js"></script>
   </head>
   <body>
-    <canvas id="ctx"></canvas>
+    <style>
+      .outer {
+        width: 100%;
+      }
+      #ctx {
+        display: block;
+        margin: 0 auto;
+      }
+    </style>
+    <div class="outer">
+      <canvas id="ctx"></canvas>
+    </div>
     <script type="text/javascript">
       var canvasEl = document.getElementById("ctx");
-      canvasEl.height = window.innerHeight;
-      canvasEl.width = window.innerWidth;
+      canvasEl.height = window.innerHeight * 0.95;
+      canvasEl.width = window.innerWidth * 0.95;
 
       var ctx = canvasEl.getContext("2d");
       var game = new Asteroids.Game();
